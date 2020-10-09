@@ -20,7 +20,7 @@ $(call require_dir,$(CICE_SRCDIR),CICE source directory)
 CPPCICE =
 #endif
 
-CICE6_ALL_OPTS=                   \
+CICE_ALL_OPTS=                    \
   COMP_SRCDIR=$(CICE_SRCDIR)      \
   COMP_BINDIR=$(CICE_BINDIR)      \
   MACHINE_ID="$(MACHINE_ID)"      \
@@ -37,7 +37,7 @@ CICE6_ALL_OPTS=                   \
 $(cice6_mk): configure
 	$(MODULE_LOGIC)                                                   ; \
 	set -eu                                                           ; \
-	export $(CICE6_ALL_OPTS) $(CICE6_MAKEOPT)                         ; \
+	export $(CICE_ALL_OPTS) $(CICE_MAKEOPT)                           ; \
 	cd $(CICE_UFSDIR)                                                 ; \
 	./comp_ice.backend.libcice
 	test -f $(cice6_mk)
@@ -51,7 +51,7 @@ build_CICE6: $(cice6_mk)
 clean_CICE6_SRC: configure
 	$(MODULE_LOGIC)                                                   ; \
 	set -eu                                                           ; \
-	export $(CICE6_ALL_OPTS) $(CICE6_MAKEOPT)                         ; \
+	export $(CICE_ALL_OPTS) $(CICE_MAKEOPT)                           ; \
 	cd $(CICE_UFSDIR)                                                 ; \
 	./comp_ice.backend.clean
 
