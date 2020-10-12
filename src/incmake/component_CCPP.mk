@@ -58,7 +58,7 @@ $(ccpp_mk): configure
 distclean_CCPP: clean_CCPP
 	set -xue                                                        ; \
 	export PATH_CCPP="$(CCPP_SRCDIR)"                               ; \
-	cd $(ROOTDIR)                                                   ; \
+	cd $(ROOTDIR)/FV3                                               ; \
 	$$PATH_CCPP/framework/scripts/ccpp_prebuild.py $(CCPP_CONFOPT) --clean ; \
 	cd $$PATH_CCPP                                                  ; \
 	rm -rf "$(CCPP_BINDIR)/lib"                                     ; \
