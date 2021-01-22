@@ -591,11 +591,6 @@
       ESMF_ERR_RETURN(RC,RC_REG)
 #endif
       
-      call NUOPC_CompSpecialize(EARTH_GRID_COMP,                         &
-                                specLabel=Driver_label_Finalize,         &
-                                specRoutine=Finalize, rc=RC)
-      ESMF_ERR_RETURN(RC, RC_REG)
-
       ! register an internal initialization method
       call NUOPC_CompSetInternalEntryPoint(EARTH_GRID_COMP, ESMF_METHOD_INITIALIZE, &
                                            phaseLabelList=(/"IPDv04p2"/),           &
